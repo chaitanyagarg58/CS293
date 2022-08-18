@@ -10,7 +10,7 @@
 int DICT_SIZE = 64;
 
 struct Entry {
-  char *key = nullptr;
+  char *key = null;
   int value;
   // define suitable fields here
 };
