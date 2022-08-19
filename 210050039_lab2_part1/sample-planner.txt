@@ -9,7 +9,7 @@ ADD Gottingen 1000 Berlin 1200
 QUERY_JOURNEY Gottingen 900 Munich
 QUERY_JOURNEY Gottingen 1100 Munich
 QUERY_JOURNEY Frankfurt 700 Munich
-QUERY_STATION Hannover
-QUERY_STATION Munich
+QUERY_STATION Hannover 0
+QUERY_STATION Munich 0
 QUERY_JOURNEY Berlin 1000 Gottingen
 EXIT

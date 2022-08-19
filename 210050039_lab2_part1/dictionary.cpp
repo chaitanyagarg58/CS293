@@ -6,7 +6,8 @@ char *null = new char[32];
 bool equalChar(char arr1[], char arr2[])
 {
 	for (int i = 0; arr1[i] != '\0' || arr2[i] != '\0'; i++)
-		return arr1[i] == arr2[i];
+		if (arr1[i] != arr2[i])
+			return false;
 	return true;
 }
 
