@@ -74,22 +74,31 @@ public:
   }
   void query_station(string key, float time)
   {
-    int hash = hashValue(key);
+    int j = 0, hash = hashValue(key);
+    struct Query ans[N];
     bool found = false;
     for (int i = hash; true; i = (i + 1) % N)
     {
       if (jour[i].station_one == key && jour[i].start_time >= time)
       {
-        cout << jour[i].start_time << " " << jour[i].station_two << endl;
+        ans[j].time1 = jour[i].start_time;
+        ans[j++].stop = jour[i].station_two;
+        // cout << jour[i].start_time << " " << jour[i].station_two << endl;
         found = true;
       }
       if (jour[i].station_one == null || i == (hash - 1 + N) % N)
       {
         if (!found)
           cout << "Station not Found." << endl;
-        return;
+        break;
       }
     }
+    if (j == 0)
+      return;
+    sort(ans, ans + j, compare);
+    for (int i = 0; i < j; i++)
+      cout << ans[i].time1 << " " << ans[i].stop << endl;
+
     return;
   }
   void query_journey(string start, float time, string dest)
